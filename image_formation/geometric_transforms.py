@@ -19,7 +19,7 @@ pts2 = np.float32([[91.7, 57.5], [178.4, 118.2], [159.8, 232.4]])  # desired poi
 
 M = cv2.getAffineTransform(pts1, pts2) #get affline matrix
 dst = cv2.warpAffine(img, M, (cols, rows)) #apply transformation
-print(f"\nAffine has been applied. Here is the warp affline Matrix:\n{M}\n")
+print(f"\nAffine has been applied. Here is the affine Matrix:\n{M}\n")
 
 #now, perform translation to move the image downwards slightly 
 tx, ty = 0, 7 #no horizontal shift, 5 pixel vertical shift
@@ -30,15 +30,15 @@ print(f"Translation has been applied. Here is the translation Matrix:\n{T}\n")
 #display original, transformed image, and reversed engineered output image
 plt.figure(figsize=(15, 5))
 plt.subplot(1, 4, 1)
-plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB)) #convert BGR to RGB for displaying correctly
+plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB)) #convert BGR to RGB for displaying correctly, used ChatGPT for this line
 plt.title('Original Image')
 
 plt.subplot(1, 4, 2)
-plt.imshow(cv2.cvtColor(transformed_img, cv2.COLOR_BGR2RGB)) #convert BGR to RGB for displaying correctly
+plt.imshow(cv2.cvtColor(transformed_img, cv2.COLOR_BGR2RGB)) #convert BGR to RGB for displaying correctly, used ChatGPT for this line
 plt.title('Transformed Image')
 
 plt.subplot(1, 4, 3)
-plt.imshow(cv2.cvtColor(dst_translated, cv2.COLOR_BGR2RGB)) #convert BGR to RGB for displaying correctly
+plt.imshow(cv2.cvtColor(dst_translated, cv2.COLOR_BGR2RGB)) #convert BGR to RGB for displaying correctly, used ChatGPT for this line
 plt.title('Reverse Engineered Image')
 
 plt.tight_layout()
