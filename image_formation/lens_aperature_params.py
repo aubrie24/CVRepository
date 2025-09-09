@@ -1,6 +1,6 @@
 #Author: Aubrie Pressley
 #Date: 09/08/2023
-#Description: This files helps visualize the relationships between key camera parameters
+#Description: This file helps visualize the relationships between key camera parameters
 #Sources: Class Lecture slides and ChatGPT
 
 import numpy as np
