@@ -72,9 +72,9 @@ To run error_noise_analysis.py:
 ![Quantized Noisy Signal](readme_images/quantized_signal.png)
 
 Results: 
-MSE: 0.042538
-RMSE: 0.206247
-PSNR: 13.71 dB
+1) MSE: 0.042538
+2) RMSE: 0.206247
+3) PSNR: 13.71 dB
 
 MSE is the average squared difference between the original and the noisy signal. The MSE is fairly samll relative to the signal range of 2, so the noise is noticeable but not overwhelming. 
 
