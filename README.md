@@ -1,5 +1,3 @@
-QUESTION: DO I NEED TO ADD PLOTS IN HERE
-
 Exercise 1: Reverese Engineering 2D Transformations
 
 To run geometric_transforms.py: 
