@@ -22,7 +22,7 @@ dst = cv2.warpAffine(img, M, (cols, rows)) #apply transformation
 print(f"\nAffine has been applied. Here is the affine Matrix:\n{M}\n")
 
 #now, perform translation to move the image downwards slightly 
-tx, ty = 0, 7 #no horizontal shift, 5 pixel vertical shift
+tx, ty = 0, 7 #no horizontal shift, 7 pixel vertical shift
 T = np.float32([[1, 0, tx], [0, 1, ty]]) #translation matrix
 dst_translated = cv2.warpAffine(dst, T, (cols, rows)) #apply translation with the same size 
 print(f"Translation has been applied. Here is the translation Matrix:\n{T}\n")

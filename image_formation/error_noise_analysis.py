@@ -46,6 +46,8 @@ def main():
 
     #plot the quantized signal as a staricase plot
     plt.step(t_sampled, qv, where='post', label=f'Quantized Signal ({num_bits} bits)', color='r', linestyle='--')
+    plt.legend(loc='upper left')
+    plt.title("Quantized Signal")
     plt.show()
 
     #compute and print MSE, RMSE, PSNR 

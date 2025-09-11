@@ -5,6 +5,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D #for 3D plotting
 
 #function to compute and return zi given zo and f
 def thin_lins_zi(f, z0):
@@ -47,18 +48,42 @@ examples = [(24, 1.4), (50, 1.8), (70, 2.8), (200, 2.8), (400, 2.8), (600, 4)]
 
 #loop through examples, calculate diameter, and print results
 focal_lengths = []
+f_numbers = []
 diameters = []
 #plot the results and print in the terminal 
 for f_val, f_number in examples:
     D = calc_diameter(f_val, f_number)
     focal_lengths.append(f_val)
+    f_numbers.append(f_number)
     diameters.append(D)
     print(f"For a focal length of {f_val} mm and an f-number of {f_number}, the aperture diameter is {D:.2f} mm.")
 
-plt.figure(figsize=(8, 5))
-plt.plot(focal_lengths, diameters, marker='o', color='orange', linewidth=2)
+#create a 3d scatter plot
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
+
+scatter = ax.scatter(focal_lengths, f_numbers, diameters, c=diameters, cmap='viridis', s=100, marker='o')
+
+ax.set_xlabel('Focal Length (mm)')
+ax.set_ylabel('F-number (f/#)')
+ax.set_zlabel('Aperture Diameter (mm)')
+ax.set_title('Aperture Diameter as a Function of Focal Length and F-number')
+
+fig.colorbar(scatter, ax=ax, label='Aperture Diameter (mm)')
+plt.show()
+
+# create a 2D scatter plot with color mapped to f-number
+plt.figure(figsize=(8, 6))
+scatter2d = plt.scatter(focal_lengths, diameters, 
+                        c=f_numbers, cmap='plasma', s=100, marker='o')
+
 plt.xlabel('Focal Length (mm)')
 plt.ylabel('Aperture Diameter (mm)')
-plt.title('Aperture Diameter vs Focal Length for Various f-numbers')
-plt.grid(True, which="both", ls="--")
+plt.title('Aperture Diameter vs Focal Length (color = f-number)')
+
+# add colorbar as key for f-number
+cbar = plt.colorbar(scatter2d)
+cbar.set_label('F-number (f/#)')
+
+plt.grid(True, ls="--", alpha=0.7)
 plt.show()
