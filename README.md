@@ -1,4 +1,4 @@
-Exercise 1: Reverese Engineering 2D Transformations
+Exercise 1: Reverse Engineering 2D Transformations
 
 To run geometric_transforms.py: 
 1) Install numpy, matplotlib, and openCV
