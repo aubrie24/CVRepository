@@ -29,12 +29,12 @@ The f number is calculated by f/D where f is the focal lenght and D is the apera
 ![Aperature Diameter as a function of the focal length for several popular f-numbers (2D plot).](readme_images/aperature_diameter.png)
 
 Aperature diameter needed for each lens to acheive their stated max f number: 
-i. 24mm, f/# = 1.4 the diameter = 17.14mm
-ii. 50mm, f/1.8 the diameter = 27.78mm
-iii. 70mm, f/2,8 the diameter = 25.00mm
-     200mm, f/2,8 the diameter = 71.43mm
-iv. 400mm, f/2,8 the diameter = 142.86mm
-v. 600mm, f/4.0 the diameter = 150.00mm
+1) 24mm, f/# = 1.4 the diameter = 17.14mm
+2)  50mm, f/1.8 the diameter = 27.78mm
+3)  70mm, f/2,8 the diameter = 25.00mm
+4) 200mm, f/2,8 the diameter = 71.43mm
+5)  400mm, f/2,8 the diameter = 142.86mm
+6)  600mm, f/4.0 the diameter = 150.00mm
 
 Exercise 3: Sampling and Quantization 
 
