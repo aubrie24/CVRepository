@@ -22,7 +22,7 @@ The original thin lens law was given in class as 1/f = (1/z0) + (1/zi). Therefor
 
 ![Zi as a function of Z0 for four different focal lengths.](readme_images/camera_parameters_1.png)
 
-The f number is calculated by f/D where f is the focal length and D is the aperature diameter. Therefore, to calculate the aperature diameter based on given focal lenghts and f#s would be D = f / f number. 
+The f number is calculated by f/D where f is the focal length and D is the aperature diameter. Therefore, to calculate the aperature diameter based on given focal lengths and f#s would be D = f / f number. 
 
 ![Aperature Diameter as a function of the focal length for several popular f-numbers (3D plot).](readme_images/3d_plot.png)
 
