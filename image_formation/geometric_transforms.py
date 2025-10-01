@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 #Sources used: https://docs.opencv.org/4.x/da/d6e/tutorial_py_geometric_transformations.html and chatGPT
 
 #read the original image
-img = cv2.imread('../images/original_image.jpg')
-transformed_img = cv2.imread('../images/transformed_image.jpg')
+img = cv2.imread('./images/original_image.jpg')
+transformed_img = cv2.imread('./images/transformed_image.jpg')
 assert img is not None, "file could not be read, check with os.path.exists()"
 rows,cols, ch = img.shape #get dimensions of image
 
