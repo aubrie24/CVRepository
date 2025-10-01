@@ -18,6 +18,8 @@ To run lens_aperature_params.py:
 
 The original thin lens law was given in class as 1/f = (1/z0) + (1/zi). Therefore, the equation to plot the lens to image distance (zi) as a function of the object distance (z0) would be zi = 1 / ((1/f) - (1/z0)).
 
+The graph effectively shows the nonlinear relationship of the thin lens formula. Each curve has a vertical asymptote at z0 = F, where the object is at the focal point and the image distance approaches infinity. All curves also show that as object distance increases the image distance decreases.
+
 ![Zi as a function of Z0 for four different focal lengths.](readme_images/camera_parameters_1.png)
 
 The f number is calculated by f/D where f is the focal length and D is the aperature diameter. Therefore, to calculate the aperature diameter based on given focal lengths and f#s would be D = f / f number. 
@@ -33,6 +35,8 @@ Aperature diameter needed for each lens to acheive their stated max f number:
 4) 200mm, f/2,8 the diameter = 71.43mm
 5)  400mm, f/2,8 the diameter = 142.86mm
 6)  600mm, f/4.0 the diameter = 150.00mm
+
+The results show that a larger focal length requires a larger diameter to maintain the same F number. 
 
 Exercise 3: Sampling and Quantization 
 
