@@ -30,18 +30,20 @@ def median_filter(img, size=3):
 
     return new_img
 
+#drive code for exerscise 2, load img, apply median filter, apply Sx and Sy with and without median filter, compare results
 def main():
     #read in image 
     img = cv2.imread('images/noisy_image.png', cv2.IMREAD_GRAYSCALE)
-
+    assert img is not None, "file could not be read"
+    
     #apply median filter
     filtered_img = median_filter(img, size=3)
 
-    #apply edge detection without median filter
-    edges_without_filter = calculate_gradient.calculate_gradient(img)
+    #apply Sx and Sy without median filter (angle is not used in this but is returned by the function)
+    edges_without_filter, _ = calculate_gradient.calculate_gradient(img)
 
-    #apply edge detection with median filter
-    edges_with_filter = calculate_gradient.calculate_gradient(filtered_img)
+    #apply Sx and Sy with median filter
+    edges_with_filter, _ = calculate_gradient.calculate_gradient(filtered_img)
 
     #compare the gradient magnitudes with and without median filtering
     mean_grad_no_filter = edges_with_filter.mean()

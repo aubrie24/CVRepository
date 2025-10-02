@@ -52,3 +52,23 @@ With Median Filter:
     Number of Strong Gradients (>100): 19870
 
 These results show that without filtering, the images contains many weak but noisy gradients (high false postives). With filtering, the average gradient magnitude increases while the number of strong gradients decreases dramatically. This indicates that noise-induced edges were removed and mostly meaningful edges remain, making the filtered edge map both cleaner and more accurate. 
+
+Exercise 3: Simple Sobel-based edge detector 
+
+The image used for this exercise came from: https://learnopencv.com/edge-detection-using-opencv/
+
+The driver code to run all necessary steps and display images side by side is in sobel_edge_detector.py. 
+
+For exercise 3, run sobel_edge_detector.py
+1) Install dependencies using pip install numpy opencv-python matplotlib
+2) python sobel_edge_detector.py
+
+![Original Image, Sobel Detector, Directional Edge Detector, Canny](readme_images/exercise3.png)
+
+The Sobel edge map highlights regions of strong intensity change by computing the gradient magnitute from the x and y Sobel filters. After applying a binary threshold, the resulting edge map successfully captures prominent edges in the image. This method is somewhat senstive to noise, however, the image I chose does not have much noise. Additionally, the threshold value strongly influences the clarity of the edges. Too low of a threshold means too many weak edges and noise included. Too high of a threshold means only the strongest edges remain, possibly losing detail. 
+
+The directional edge detector uses both the gradient magnitude and gradient direction. By thresholding only the gradient angles around 45 degrees, diagonal edges were isolated. This produces a sparse edge map where only edges within the specified direction range are visible. 
+
+One important consideration is that edge oritentation is ambiguous by 180 degrees. For example, a 45 degree edge and a 225 degree edge are equivalent orientations, so both must be considered if we want complete directional edge detection. Despite this, the method is very useful to analyze edges in a specific orientation. 
+
+The Canny detector provides a much cleaner edge map compared to Sobel. It uses Gaussian smoothing to reduce noise, computes gradients, applies non maximum suppression to thin edges, and finally performs hysteresis thresholding to connect edges. Noise is significantly reduced compared to Sobel, edges appear sharper and more continuous, both weak and strong edges are preserved when they are a part of significant structures. Canny is more robust and widely used in practice compared to raw Sobel filtering. 

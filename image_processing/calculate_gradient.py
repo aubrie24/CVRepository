@@ -47,6 +47,9 @@ def calculate_gradient(img):
     gradient_magnitude = (gradient_magnitude / np.max(gradient_magnitude)) * 255
     gradient_magnitude = gradient_magnitude.astype(np.uint8)
 
-    return gradient_magnitude
+    #gradient direction (in degrees, range -180 to 180)
+    grad_angle = np.arctan2(grad_y, grad_x) * (180 / np.pi)
+
+    return gradient_magnitude, grad_angle
 
 
