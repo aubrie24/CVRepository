@@ -36,20 +36,20 @@ Results:
 
 ![Original Image, Median Filter Image, Edge Detected (Without Filter), Edge Dettected (With Filter)](readme_images/exercise2.png)
 
-The median filter sucessfully denoises the original image because replacing each pixel's value with the median value of its neighboring pixels effectivly removes outlier pixels that often constitute "salt-and-pepper" noise. Unlike the mean, the median is robust to extremem value, making it more effective at eliminating these impulsive noise spikes without blurring edges as much. 
+The median filter sucessfully denoises the original image because replacing each pixel's value with the median value of its neighboring pixels effectivly removes outlier pixels that often constitute "salt-and-pepper" noise. Unlike the mean, the median is robust to extreme value, making it more effective at eliminating these impulsive noise spikes without blurring edges as much. 
 
 For edge detection, the "actual" edges in the filtered image are visually more defined than in the non-filtered image. By "actual" edges, I mean the strong changes in intensity values that I would consider an edge with my own eyes. For example, the balloon edges are much more visible in the filtered image. In the unfiltered image, salf and pepper noise introduces many false intensity changes, which the Sobel operator incorrectly amplifies as edges. 
 
-The reason for this is because Sobel filters take the first derivative in both the horizontal (S)x and vertical (Sy) directions. In the Sx filter, the first column is negatives and the last column is positives. That means it will emphasize changes of intensity in the horizontal direction. In the Sy filter, the top row is negatives and the last row is positives. That means it will emphasize changes of intensity in the horizontal direction. Since salt and pepper noise is typically very dark (0 intensity) or very bright (255 intensity), it creates artificial steep changes in pixel intensity. The sobel filters will emphasize the noisy intensity changes, taking emphasis away from the actual edges in the image. The median filter supresses the noisy pixels, allowing the Sobel filters to highlight the real structured edges more clearly. My analysis is further supported with the following statistics: 
+The reason for this is because Sobel filters take the first derivative in both the horizontal (Sx) and vertical (Sy) directions. In the Sx filter, the first column is negatives and the last column is positives. That means it will emphasize changes of intensity between columns, effectively highlighting vertical edges. In the Sy filter, the top row is negatives and the last row is positives. That means it will emphasize changes of intensity between rows, effectively highlighting horizontal edges. Since salt and pepper noise is typically very dark (0 intensity) or very bright (255 intensity), it creates artificial steep changes in pixel intensity. The sobel filters will emphasize the noisy intensity changes, taking emphasis away from the actual edges in the image. The median filter supresses the noisy pixels, allowing the Sobel filters to highlight the real structured edges more clearly. My analysis is further supported with the following statistics: 
 
-Without Median Filter: 
-    Mean Gradient Magnitude: 27.354169921875
-    Std Dev of Gradient Magnitude: 39.19206998199675
-    Number of Strong Gradients (>100): 114901
-With Median Filter: 
-    Mean Gradient Magnitude: 78.47043619791667
-    Std Dev of Gradient Magnitude: 72.46628637606494
-    Number of Strong Gradients (>100): 19870
+1) Without Median Filter: 
+    - Mean Gradient Magnitude: 27.354169921875
+    - Std Dev of Gradient Magnitude: 39.19206998199675
+    - Number of Strong Gradients (>100): 114901
+2) With Median Filter: 
+    - Mean Gradient Magnitude: 78.47043619791667
+    - Std Dev of Gradient Magnitude: 72.46628637606494
+    - Number of Strong Gradients (>100): 19870
 
 These results show that without filtering, the images contains many weak but noisy gradients (high false postives). With filtering, the average gradient magnitude increases while the number of strong gradients decreases dramatically. This indicates that noise-induced edges were removed and mostly meaningful edges remain, making the filtered edge map both cleaner and more accurate. 
 
