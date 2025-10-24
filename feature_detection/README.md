@@ -2,7 +2,7 @@ Part 1: Blob Detection
 
 ![example-image blob detection with no parameter tuning](readme_images/image1.png)
 
-The output with default parameters produced many noisy keypoints. While most prominent blobs in the image had keypoints near their centers, there were numerous unwanted detections along the edges of the cards and throughout the gray background. Many small keypoints also appeared around the edges of the blobs, even when a keypoint alreay existed at the blob's center. 
+The output with default parameters produced many noisy keypoints. While most prominent blobs in the image had keypoints near their centers, there were numerous unwanted detections along the edges of the cards and throughout the gray background. Many small keypoints also appeared around the edges of the blobs, even when a keypoint alreay existed at the blob's center. I also noticed that ligher blobs, especially on the background cards, were not picked up as blobs because the contrast was not large enough. 
 
 Larger cirlces were drawn around larger blobs and smaller ones around smaller blobs, demonstrating the scale-invarient nature of SIFT. However, the larger blbos were not fully covered by keypoints, whereas the smaller blobs were. This suggests an issues with seleecting the appropriate scale for larger features. 
 
@@ -14,11 +14,11 @@ First, to reduce the number of noisy keypoints along blob edges, I first adjuste
 
 Next, I noticed noisy keypoints near the corners of the cards and one large keypoint in the gray background. To address this, I increased the contrastThreshold from 0.04 to 0.09 to filter out weak features in low contrast regions. This adjustment focused detection on the central cards, preserving the main blobs while removing most background keypoint noise. 
 
-![example-image blob detection with edgeThreshold=2](readme_images/image3.png)
+![example-image blob detection with edgeThreshold=2, contrastThreshold=0.09](readme_images/image3.png)
 
 Finally, I aimed to improve the keypoint coverage for the larger blobs. I increased the nOctiveLayers parameter from 3 to 5 to add more intermediate scales per octiave, enhacing detection for both small and large features. This adjustment successfully detected a few additional small blobs in the center and upper cards, though it also introduced two extra noisy keypoints. Since it captured three new valid blobs, I kept this change. However, it did not significantly improve coverage of the larger blobs. 
 
-![example-image blob detection with edgeThreshold=2](readme_images/image4.png)
+![example-image blob detection with edgeThreshold=2, contrastThreshold=0.09, nOctaveLayers=5](readme_images/image4.png)
 
 In the final output, 104 keypoints were dettected, with 26 correct blobs (counted manually). 
 
