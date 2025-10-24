@@ -43,15 +43,15 @@ Eeach value in the descriptor represents how strong the image gradient is in a p
 
 The descriptor is rotation and scale invariant so the 4x4 grid is oriented according to the keypoint's dominate orientation, and the patch size depends on the keypoint's scale. Additionally, the descriptor is normalized to reduce the effects of illumination changes, ensuring the vector represents gradient patterns rather than absolute brightness.  
 
-![4x4 grid 8 bin orientation](/diagram1.png)
+![4x4 grid 8 bin orientation](readme_images/diagram1.png)
 
-![4x4 grid 8 bin histogram](/diagram2.png)
+![4x4 grid 8 bin histogram](readme_images/diagram2.png)
 
 # Part 4: Feature Matching
 
 I performed a rotation of 45 degrees. The feature matching was decently successful. Most of the important circles in the image was matched back up with each other. I did notice that the two center cards have a couple of circles that are identical, and so the feature matching would realize this and match one circle in the original image to two circles in the transformed image (because they technically have the same descriptors, but at different locations on the image). 
 
-![Feature Matching](/matches.png)
+![Feature Matching](readme_images/matches.png)
 
 # Part 5: SIFT matching with your own images (Grad Only)
 
