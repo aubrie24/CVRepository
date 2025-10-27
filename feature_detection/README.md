@@ -10,13 +10,19 @@ Larger cirlces were drawn around larger blobs and smaller ones around smaller bl
 
 First, to reduce the number of noisy keypoints along blob edges, I first adjusted the edgeThreshold parameter. Lowering it from the default value of 10 to 2 minimized small, redundant keypoints around the blob edges. 
 
+1) Step 1 Outcome
+
 ![example-image blob detection with edgeThreshold=2](readme_images/image2.png)
 
 Next, I noticed noisy keypoints near the corners of the cards and one large keypoint in the gray background. To address this, I increased the contrastThreshold from 0.04 to 0.09 to filter out weak features in low contrast regions. This adjustment focused detection on the central cards, preserving the main blobs while removing most background keypoint noise. 
 
+2) Step 2 Outcome
+
 ![example-image blob detection with edgeThreshold=2, contrastThreshold=0.09](readme_images/image3.png)
 
 Finally, I aimed to improve the keypoint coverage for the larger blobs. I increased the nOctiveLayers parameter from 3 to 5 to add more intermediate scales per octiave, enhacing detection for both small and large features. This adjustment successfully detected a few additional small blobs in the center and upper cards, though it also introduced two extra noisy keypoints. Since it captured three new valid blobs, I kept this change. However, it did not significantly improve coverage of the larger blobs. 
+
+3) Final Outcome
 
 ![example-image blob detection with edgeThreshold=2, contrastThreshold=0.09, nOctaveLayers=5](readme_images/image4.png)
 
