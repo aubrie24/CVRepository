@@ -55,6 +55,15 @@ I performed a rotation of 45 degrees. The feature matching was decently successf
 
 # Part 5: SIFT matching with your own images (Grad Only)
 
+![Before and After Tunning Parameters](readme_images/beforeandafter.png)
 
+The goal was to be able to detect features within the cherry photo in images with a different background. 
 
+Here are the parameter tuning decisions I made: 
+- High contrast threshold to filter out keypoints found in the carpeted background of the first image. 
+- Increase octave layers for better scale localization. I wanted to be able to detect the cherry features in both images where they appear as different sizes. 
+- Increase sigma to smooth out noise since the images do not have high reslolution. This also places focus on larger structures. 
 
+![Matches between image 1 and 2](readme_images/matches2.png)
+
+The detector was able to successfully match features of the cherry pillow between the two images. 
