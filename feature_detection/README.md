@@ -20,12 +20,12 @@ Finally, I aimed to improve the keypoint coverage for the larger blobs. I increa
 
 ![example-image blob detection with edgeThreshold=2, contrastThreshold=0.09, nOctaveLayers=5](readme_images/image4.png)
 
-In the final output, 104 keypoints were dettected, with 28 correct blobs (counted manually). 
+In the final output, 104 keypoints were detected, with 28 correct blobs (counted manually). 
 
 Methods used: 
 
-- Increasing the contrastThreshold decreased the total number of keypoints 
-- Decreasing the edgeThreshold also reduced noisy detections 
+- Increasing the contrastThreshold decreased the total number of keypoints. 
+- Decreasing the edgeThreshold also reduced noisy detections. 
 - Increasing the nOctaveLayers slightly increased the total keypoints. 
 
 Methods not used: 
